@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harlen Lee Cool</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Karla:ital,wght@0,400;0,500;0,600;1,400&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #f3eee4;
+    --paper-deep: #ece4d4;
+    --ink: #2b2a28;
+    --ink-soft: #55504a;
+    --rose: #b5766f;
+    --rose-tint: #ecdcd6;
+    --sage: #6f7f5c;
+    --sage-tint: #dee3d2;
+    --plum: #5b4364;
+    --plum-tint: #e2d9e4;
+    --wine: #6e3a3a;
+    --wine-tint: #e9d9d4;
+    --rule: rgba(43,42,40,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Karla', sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    background-image:
+      repeating-linear-gradient(transparent, transparent 43px, var(--rule) 44px);
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .note{
+    font-family:'Caveat', cursive;
+    color:var(--rose);
+    font-size:1.35rem;
+    line-height:1.1;
+  }
+
+  a{color:inherit;}
+  a:focus-visible, button:focus-visible{outline:2px solid var(--ink); outline-offset:3px;}
+
+  .wrap{max-width:860px; margin:0 auto; padding:0 28px;}
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:10;
+    background:rgba(243,238,228,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule);
+  }
+  nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:16px; padding-bottom:16px;
+  }
+  .brand{font-family:'Fraunces', serif; font-weight:500; font-size:1.15rem;}
+  .navlinks{display:flex; gap:26px; list-style:none; margin:0; padding:0; font-size:0.92rem;}
+  .navlinks a{text-decoration:none; color:var(--ink-soft); border-bottom:1px solid transparent; padding-bottom:2px;}
+  .navlinks a:hover{border-bottom-color:var(--ink-soft);}
+  .navtoggle{display:none; background:none; border:none; font-size:1.5rem; cursor:pointer; color:var(--ink);}
+
+  @media (max-width:640px){
+    .navlinks{
+      position:absolute; top:100%; left:0; right:0;
+      flex-direction:column; gap:0;
+      background:var(--paper); border-bottom:1px solid var(--rule);
+      max-height:0; overflow:hidden; transition:max-height 0.3s ease;
+    }
+    .navlinks.open{max-height:260px;}
+    .navlinks a{display:block; padding:14px 28px; border-bottom:1px solid var(--rule);}
+    .navtoggle{display:block;}
+  }
+
+  /* HERO */
+  .hero{padding:88px 0 64px; position:relative;}
+  .hero .eyebrow{margin-bottom:14px;}
+  .hero h1{font-size:clamp(2.6rem, 6vw, 4.2rem); line-height:0.98;}
+  .hero .tagline{
+    margin-top:22px; max-width:520px;
+    font-size:1.08rem; color:var(--ink-soft);
+  }
+  .hero .stitch{
+    margin-top:40px; height:1px; width:64px;
+    background:repeating-linear-gradient(90deg, var(--ink) 0 6px, transparent 6px 11px);
+    opacity:0.5;
+  }
+
+  /* SECTION HEADERS */
+  .section{padding:60px 0;}
+  .section + .section{border-top:1px solid var(--rule);}
+  .section-head{
+    display:flex; align-items:baseline; gap:16px; flex-wrap:wrap;
+    margin-bottom:36px;
+  }
+  .section-head h2{font-size:1.7rem;}
+  .section-head .note{transform:rotate(-2deg);}
+
+  /* CLIPPING (Mothers of Highwood) */
+  .clipping{
+    background:var(--paper-deep);
+    border:1px solid var(--rule);
+    padding:34px 30px;
+    position:relative;
+    box-shadow:0 1px 0 var(--rule), 0 8px 22px -14px rgba(43,42,40,0.35);
+  }
+  .clipping::before{
+    content:"";
+    position:absolute; inset:8px;
+    border:1px solid rgba(43,42,40,0.18);
+    pointer-events:none;
+  }
+  .clipping .masthead{
+    font-family:'Fraunces', serif; font-style:italic; font-weight:400;
+    font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--ink-soft); margin-bottom:6px;
+  }
+  .clipping h3{
+    font-size:1.7rem; font-style:italic; margin-bottom:14px; line-height:1.15;
+  }
+  .clipping .byline{
+    font-size:0.85rem; color:var(--ink-soft); margin-bottom:18px; font-style:italic;
+  }
+  .clipping p{
+    font-size:0.98rem;
+    column-count:1;
+  }
+  @media (min-width:600px){
+    .clipping p{column-count:2; column-gap:26px;}
+  }
+  .clipping .tag{
+    display:inline-block; margin-top:20px;
+    font-family:'Caveat', cursive; font-size:1.2rem;
+    color:var(--sage);
+  }
+
+  /* WORKS GRID */
+  .works-grid{display:grid; grid-template-columns:1fr; gap:18px;}
+  @media (min-width:640px){
+    .works-grid{grid-template-columns:1fr 1fr;}
+  }
+  .work-card{
+    display:block;
+    padding:26px 24px;
+    border:1px solid var(--rule);
+    position:relative;
+    text-decoration:none;
+    transition:transform 0.18s ease;
+  }
+  .work-card:hover{transform:translateY(-3px);}
+  .work-card .kicker{
+    font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em;
+    font-weight:600; margin-bottom:10px; display:inline-block;
+    padding:3px 9px; border-radius:2px;
+  }
+  .work-card h3{font-size:1.3rem; margin-bottom:8px;}
+  .work-card p{font-size:0.94rem; color:var(--ink-soft); margin:0;}
+  .work-card.memoir{background:var(--rose-tint);}
+  .work-card.memoir .kicker{background:var(--rose); color:var(--paper);}
+  .work-card.romantasy{background:var(--plum-tint);}
+  .work-card.romantasy .kicker{background:var(--plum); color:var(--paper);}
+
+  .paw{
+    display:inline-block;
+    width:1em; height:1em;
+    vertical-align:-0.12em;
+    margin-right:6px;
+    color:var(--rose);
+  }
+
+  /* ABOUT */
+  .about-body{max-width:640px;}
+  .about-body p{margin:0 0 16px;}
+  .signoff{font-family:'Caveat', cursive; font-size:1.6rem; color:var(--ink-soft); margin-top:22px;}
+
+  /* CONNECT */
+  .connect-links{
+    display:flex; flex-wrap:wrap; gap:14px; margin-top:28px;
+  }
+  .connect-links a{
+    text-decoration:none;
+    border:1px solid var(--ink);
+    padding:11px 22px;
+    font-size:0.92rem;
+    display:inline-block;
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .connect-links a:hover{background:var(--ink); color:var(--paper);}
+  .connect-links a.primary{background:var(--ink); color:var(--paper);}
+  .connect-links a.primary:hover{background:var(--ink-soft);}
+
+  footer{
+    border-top:1px solid var(--rule);
+    padding:34px 0 50px;
+    font-size:0.85rem; color:var(--ink-soft);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <span class="brand">Harlen Lee Cool</span>
+    <button class="navtoggle" id="navToggle" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+    <ul class="navlinks" id="navLinks">
+      <li><a href="#about">About</a></li>
+      <li><a href="#inquire">Inquire</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow note">dear reader &mdash;</div>
+    <h1>Have you ever<br>mourned the living?</h1>
+    <p class="tagline">My work moves across genres like the winds over the high plains; literary fiction, memoir, fantasy and romance, all searching for answers to the same questions: Am I alone? Why do I feel unloveable? Is there hope?</p>
+    <div class="stitch"></div>
+  </div>
+</header>
+
+<section class="section" id="current">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Sneak Peek</h2>
+      <span class="note">still drafting, be gentle &mdash;</span>
+    </div>
+
+    <p style="color:var(--ink-soft); max-width:640px; margin-bottom:28px;">
+      On the Montana frontier in the 1880s, three women &mdash; a child bride turned ranch hand, a survivor
+      of famine and orphanhood, and a woman married into violence &mdash; hold each other's lives together
+      while the men around them break, disappear, or betray them. <em>Winds of Highwood</em> is a story of
+      found sisterhood and survival.
+    </p>
+
+    <div class="clipping">
+      <div class="masthead">The Anaconda Standard</div>
+      <div class="byline">Anaconda, Mont. &mdash; Wednesday Morning, January 17, 1906</div>
+      <h3>Crippled Man Tires of Living</h3>
+      <p class="deck" style="font-style:italic; color:var(--ink-soft); margin-bottom:16px;">Believing Wife to be Unfaithful, Edward Keister Shoots Himself</p>
+      <p>
+        Great Falls, Jan. 16 &mdash; Having been partially paralyzed for more than four years, and believing
+        his wife had been guilty of intimacy with another man, Edward Keister, aged 57 years, for 33 years
+        a resident of Northern Montana, committed suicide at 5 o'clock this morning at his home in Choteau
+        county, roughly 210 miles east of this city. Sitting up in bed, he held a .45 caliber revolver back
+        of his right ear and sent a bullet into his brain, falling back lifeless on the pillow.
+      </p>
+      <p>
+        Keister, who was a wealthy stockman, was injured four years ago last summer. While driving across
+        Bell Creek on a load of poles, the load was blown over and fell on him, causing partial paralysis.
+        After receiving treatment here, he went to eastern hospitals, but did not improve in health and
+        about two months ago, he returned to Montana.
+      </p>
+      <p><strong>Begins Divorce Suit</strong> &mdash; A few days after his return he began suit for divorce
+        from his wife, who had been in charge of all his property, alleging too great intimacy with Harry
+        Watts, a ranch hand in her employ. He also alleged that she had converted to her own use his
+        property, valued at $50,000 and had refused to contribute to his support. He secured an injunction
+        preventing her from disposing of any more of the property and it was restored to his possession.
+        A few days later, he brought suit against Watts for damages of $15,000, alleging alienation of his
+        wife's affections.
+      </p>
+      <p><strong>He Takes Possession</strong> &mdash; After bringing the suits, Keister took possession of
+        the Highwood Ranch, placing Mr. and Mrs. John Jacoby and family in charge while he took up his home
+        there. Monday night, he informed Mrs. Jacoby that he was tired of the litigation and would go to
+        Fort Benton in the morning to meet his wife and settle their troubles. He then seemed cheerful as
+        usual. He slept in the room adjoining that which was occupied by the Jacobys. At 5 o'clock in the
+        morning, the Jacobys were awakened by a shot and, going to Keister's room found him dead in his
+        bed. Beside him lay the revolver from which the shot had been fired, which he had borrowed
+        recently from his attorney at Fort Benton. The coroner held an inquest in the afternoon, the jury
+        finding a verdict of suicide.
+      </p>
+      <p>
+        Mr. Keister is survived by his wife, to whom he was married 23 years ago, and by four children
+        ranging in age from 8 to 23 years. He was born in Missouri.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="other-works">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>More writing</h2>
+      <span class="note">not everything is literary &mdash;</span>
+    </div>
+
+    <div class="works-grid">
+      <a class="work-card memoir" href="https://harlenatnight.substack.com" target="_blank" rel="noopener">
+        <span class="kicker">Memoir</span>
+        <h3>The Story of Us: Safety Pins Included</h3>
+        <p>Not every coming-of-age happens at seventeen. Sometimes it takes a couple decades &mdash; and everything that came with them.</p>
+      </a>
+
+      <div class="work-card romantasy">
+        <span class="kicker">YA Fantasy</span>
+        <h3><em>(In Progress) The Lies of Lacuna</em></h3>
+        <p>An orphaned girl. A world gone dark. A past she has to unbury before she can bring the light back. <em>Sailor Moon</em> meets <em>Practical Magic</em> meets <em>Avatar: The Last Airbender.</em></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>About</h2>
+      <span class="note">the short version &mdash;</span>
+    </div>
+    <div class="about-body">
+      <p>Dear reader,</p>
+      <p>
+        If you are a person who keeps going after the worst has already happened, but cry when you're
+        finally alone, you're in the right place. I write about the ones left standing in a life that
+        doesn't look like the one they planned, yet still peer curiously around every corner, searching
+        for their people. Welcome.
+      </p>
+      <p>
+        I am currently building <em>Winds of Highwood</em> as the story of three women on the Montana
+        frontier in the 1880s, holding each other together while the men around them break, disappear,
+        or betray them. What started as family lore passed down over five generations (and one libelous
+        newspaper article), became this book.
+      </p>
+      <p>
+        Off the page: My husband and I live in Southern California and have been happily married for
+        18 years. We are child-free, but are currently outnumbered by our pets
+        <svg class="paw" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><ellipse cx="12" cy="16" rx="6" ry="5"/><ellipse cx="5" cy="8" rx="2.2" ry="3"/><ellipse cx="10" cy="5" rx="2.2" ry="3"/><ellipse cx="14" cy="5" rx="2.2" ry="3"/><ellipse cx="19" cy="8" rx="2.2" ry="3"/></svg>
+        2:1. On the weekends, we can be found enjoying a delicious meal at Lingua Franca in Frogtown,
+        or catching a futbol game in our hometown.
+      </p>
+      <p class="signoff">&mdash; H.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="inquire">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Inquire</h2>
+      <span class="note">come say hi &mdash;</span>
+    </div>
+    <p style="color:var(--ink-soft); max-width:540px;">
+      Whether you're a reader who wants to say hello, an agent or editor, or just someone who found
+      their way here &mdash; I'd love to hear from you.
+    </p>
+    <div class="connect-links">
+      <a href="mailto:harlenatnight@gmail.com" class="primary">harlenatnight@gmail.com</a>
+      <a href="https://www.instagram.com/harlenatnight" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.tiktok.com/@harlenatnight" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://harlenatnight.substack.com" target="_blank" rel="noopener">Substack</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+    <span>&copy; 2026 Harlen Lee Cool</span>
+    <span>built one entry at a time</span>
+  </div>
+</footer>
+
+<script>
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
+
+</body>
+</html>
