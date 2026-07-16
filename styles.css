@@ -12,6 +12,8 @@
     --wheat: #c9a23c;
     --wheat-deep: #7a5a20;
     --wheat-light: #e6c667;
+    --ochre: #b9821f;
+    --sienna: #93502f;
     --mtn-far: #5f6690;
     --mtn-near: #383c5c;
     --plum: #5b4364;
@@ -97,6 +99,20 @@
     .navtoggle{display:block;}
   }
 
+  .home nav{
+    position:fixed; top:0; left:0; right:0;
+    background:transparent;
+    backdrop-filter:none;
+    border-bottom:none;
+  }
+  .home nav .brand{color:var(--paper);}
+  .home nav .navlinks a{color:rgba(243,238,228,0.85);}
+  .home nav .navtoggle{color:var(--paper);}
+  @media (max-width:640px){
+    .home nav .navlinks{background:var(--paper);}
+    .home nav .navlinks a{color:var(--ink-soft);}
+  }
+
   /* HERO */
   .hero{
     position:relative; overflow:hidden;
@@ -106,7 +122,10 @@
     background:linear-gradient(180deg, #060912 0%, #0b1330 16%, #16213f 34%, #223055 54%, #34415f 76%, #4a5573 100%);
   }
   .hero .eyebrow{margin-bottom:14px;}
-  .hero h1{font-size:clamp(2.6rem, 6vw, 4.2rem); line-height:0.98; color:var(--paper);}
+  .hero h1{font-size:clamp(1.5rem, 4.2vw, 2.7rem); line-height:1.05; color:var(--paper); white-space:nowrap;}
+  @media (max-width:640px){
+    .hero h1{white-space:normal; font-size:clamp(1.3rem, 6.5vw, 2rem);}
+  }
   .hero .tagline{
     margin-top:22px; max-width:520px;
     font-size:1.08rem; color:rgba(243,238,228,0.85);
