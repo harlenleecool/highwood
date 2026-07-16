@@ -7,8 +7,8 @@
     --rose-tint: #ecdcd6;
     --sage: #6f7f5c;
     --sage-tint: #dee3d2;
-    --leaf: #5a7a45;
-    --leaf-deep: #465f37;
+    --leaf: #2e3f27;
+    --leaf-deep: #1c2818;
     --wheat: #c9a23c;
     --mtn-far: #8f8fb2;
     --mtn-near: #5c5c82;
@@ -98,7 +98,7 @@
   /* HERO */
   .hero{
     padding:88px 0 64px; position:relative; overflow:hidden;
-    background:linear-gradient(180deg, #7d88a8 0%, #b98fa0 32%, #e2a583 58%, #f0c393 78%, #f6d5a8 100%);
+    background:linear-gradient(180deg, #131b33 0%, #202c4d 30%, #34406b 55%, #4a5480 78%, #656a8c 100%);
   }
   .hero .eyebrow{margin-bottom:14px;}
   .hero h1{font-size:clamp(2.6rem, 6vw, 4.2rem); line-height:0.98; color:var(--paper);}
