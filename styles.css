@@ -142,7 +142,7 @@
 
   .hero-landscape{
     position:absolute; left:0; right:0; bottom:-2px;
-    width:100%; height:auto;
+    width:100%; height:42vh; height:42dvh;
     color:var(--wheat);
     opacity:0.85;
     pointer-events:none;
