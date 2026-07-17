@@ -118,6 +118,7 @@
     background:transparent !important;
     border-top:none !important;
     color:rgba(243,238,228,0.85) !important;
+    padding:0 0 18px !important;
     z-index:5;
   }
 
