@@ -12,8 +12,8 @@
     --sil: #100c10;
     --sky-through: #4a3a5c;
     --ground-slate: #5b6472;
-    --mtn-far: #5f6690;
-    --mtn-near: #383c5c;
+    --mtn-far: #767ea8;
+    --mtn-near: #4d5278;
     --plum: #5b4364;
     --plum-tint: #e2d9e4;
     --wine: #6e3a3a;
@@ -142,7 +142,6 @@
   .hero-scene{
     position:absolute; left:0; right:0; bottom:-2px;
     width:100%; height:auto;
-    opacity:0.95;
     pointer-events:none;
     z-index:0;
   }
