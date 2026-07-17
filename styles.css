@@ -149,7 +149,13 @@
 
   .hero-scene{
     position:absolute; left:0; right:0; bottom:-2px;
-    width:100%; height:min(56.25vw, 70vh);
+    width:100%; height:58vh; height:58dvh;
+    pointer-events:none;
+    z-index:0;
+  }
+  .hero-tree{
+    position:absolute; left:4%; bottom:-2px;
+    width:clamp(140px, 16vw, 220px); height:auto;
     pointer-events:none;
     z-index:0;
   }
