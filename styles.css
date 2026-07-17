@@ -137,12 +137,17 @@
     font-size:1.08rem; color:rgba(243,238,228,0.85);
   }
 
-  .hero-landscape{
+  .hero-landscape-wrap{
     position:absolute; left:0; right:0; bottom:-2px;
     width:100%; height:48vh; height:48dvh;
-    opacity:0.92;
+    overflow:hidden;
     pointer-events:none;
     z-index:0;
+  }
+  .hero-landscape{
+    position:absolute; left:0; right:0; bottom:0;
+    width:100%; height:auto;
+    opacity:0.92;
   }
   .wind-draw{
     stroke-dasharray:100;
