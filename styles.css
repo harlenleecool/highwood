@@ -134,7 +134,7 @@
   .hero h1 .letter{
     display:inline-block;
     opacity:0;
-    animation:letterFade 0.5s ease forwards;
+    animation:letterFade 0.7s ease forwards;
   }
   @keyframes letterFade{
     to{ opacity:1; }
