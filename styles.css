@@ -241,19 +241,25 @@
     font-family:'Fraunces', serif; font-style:italic; font-weight:400;
     font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase;
     color:var(--ink-soft); margin-bottom:6px;
+    display:flex; align-items:center; gap:12px; text-align:center;
+  }
+  .clipping .masthead::before, .clipping .masthead::after{
+    content:""; flex:1; height:1px; background:var(--ink-soft); opacity:0.35;
   }
   .clipping h3{
-    font-size:1.7rem; font-style:italic; margin-bottom:14px; line-height:1.15;
+    font-size:1.7rem; font-style:italic; margin-bottom:14px; line-height:1.15; text-align:center;
   }
   .clipping .byline{
-    font-size:0.85rem; color:var(--ink-soft); margin-bottom:18px; font-style:italic;
+    font-size:0.85rem; color:var(--ink-soft); margin-bottom:18px; font-style:italic; text-align:center;
   }
   .clipping p{
     font-size:0.98rem;
+  }
+  .clipping-body{
     column-count:1;
   }
   @media (min-width:600px){
-    .clipping p{column-count:2; column-gap:26px;}
+    .clipping-body{column-count:2; column-gap:26px; column-fill:auto;}
   }
   .clipping .tag{
     display:inline-block; margin-top:20px;
