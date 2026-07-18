@@ -306,7 +306,7 @@
   /* ABOUT */
   .about-layout{display:flex; flex-direction:column-reverse; gap:36px;}
   @media (min-width:700px){
-    .about-layout{flex-direction:row; align-items:flex-start;}
+    .about-layout{flex-direction:row; align-items:center;}
     .about-body{flex:1 1 auto;}
     .about-photo{flex:0 0 220px;}
   }
@@ -354,10 +354,6 @@
     width:56px; height:auto;
     color:#c9a855;
     filter:drop-shadow(0 2px 3px rgba(20,14,6,0.4));
-  }
-  .about-photo figcaption{
-    font-family:'Caveat', cursive; font-size:1.1rem;
-    color:var(--ink-soft); text-align:center; margin-top:6px;
   }
 
   /* CONNECT */
