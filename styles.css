@@ -177,21 +177,21 @@
 
   .hero-moon{
     position:absolute; top:36px; right:36px;
-    width:56px; height:56px;
+    width:67px; height:67px;
     z-index:0;
     opacity:0.92;
     filter:drop-shadow(0 0 14px rgba(246,229,200,0.55));
   }
   @media (max-width:520px){
-    .hero-moon{width:38px; height:38px; top:22px; right:22px;}
+    .hero-moon{width:46px; height:46px; top:22px; right:22px;}
   }
 
   .twinkle{
-    animation:twinkle 3.2s ease-in-out infinite;
+    animation:twinkle 2.8s ease-in-out infinite;
   }
   @keyframes twinkle{
-    0%, 100%{ opacity:0.25; }
-    50%{ opacity:0.95; }
+    0%, 100%{ opacity:0.3; }
+    50%{ opacity:0.9; }
   }
 
   /* SCROLL REVEAL */
