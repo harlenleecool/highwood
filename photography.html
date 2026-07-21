@@ -54,10 +54,29 @@
     <div class="section-head reveal">
       <h2>Photography + Art</h2>
     </div>
-    <p class="reveal" style="color:var(--ink-soft); max-width:540px;">
+    <p class="reveal" style="color:var(--ink-soft); max-width:540px; margin-bottom:28px;">
       A collection of images I've taken along the way &mdash; the desert light, the quiet corners,
-      the things that end up shaping what I write. More coming soon.
+      the things that end up shaping what I write.
     </p>
+
+    <div class="photo-grid reveal">
+      <button class="photo-thumb" data-index="0"><img src="photos/photo-01.jpg" alt="Portrait in dappled forest light" loading="lazy"></button>
+      <button class="photo-thumb" data-index="1"><img src="photos/photo-02.jpg" alt="Maternity portrait with flower crown" loading="lazy"></button>
+      <button class="photo-thumb" data-index="2"><img src="photos/photo-03.jpg" alt="Diner interior with lit EAT sign" loading="lazy"></button>
+      <button class="photo-thumb" data-index="3"><img src="photos/photo-04.jpg" alt="Groomsmen laughing together" loading="lazy"></button>
+      <button class="photo-thumb" data-index="4"><img src="photos/photo-05.jpg" alt="Bride laughing against a yellow wall" loading="lazy"></button>
+      <button class="photo-thumb" data-index="5"><img src="photos/photo-06.jpg" alt="Bride among columns" loading="lazy"></button>
+      <button class="photo-thumb" data-index="6"><img src="photos/photo-07.jpg" alt="Close-up portrait of a child laughing" loading="lazy"></button>
+      <button class="photo-thumb" data-index="7"><img src="photos/photo-08.jpg" alt="Back portrait with musical note tattoos" loading="lazy"></button>
+      <button class="photo-thumb" data-index="8"><img src="photos/photo-09.jpg" alt="Woman leaping with a pink balloon" loading="lazy"></button>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">&#8249;</button>
+      <img class="lightbox-img" id="lightboxImg" src="" alt="">
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">&#8250;</button>
+    </div>
     <div class="vine-divider" aria-hidden="true">
           <svg viewBox="0 0 900 30" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 15 C 60 5, 120 25, 180 15 C 240 5, 300 25, 360 15 C 420 5, 480 25, 540 15 C 600 5, 660 25, 720 15 C 780 5, 840 25, 900 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
@@ -95,5 +114,71 @@
   </div>
 </footer>
 <script src="script.js"></script>
+<script>
+  const galleryPhotos = [
+    { src: 'photos/photo-01.jpg', alt: 'Portrait in dappled forest light' },
+    { src: 'photos/photo-02.jpg', alt: 'Maternity portrait with flower crown' },
+    { src: 'photos/photo-03.jpg', alt: 'Diner interior with lit EAT sign' },
+    { src: 'photos/photo-04.jpg', alt: 'Groomsmen laughing together' },
+    { src: 'photos/photo-05.jpg', alt: 'Bride laughing against a yellow wall' },
+    { src: 'photos/photo-06.jpg', alt: 'Bride among columns' },
+    { src: 'photos/photo-07.jpg', alt: 'Close-up portrait of a child laughing' },
+    { src: 'photos/photo-08.jpg', alt: 'Back portrait with musical note tattoos' },
+    { src: 'photos/photo-09.jpg', alt: 'Woman leaping with a pink balloon' }
+  ];
+
+  let currentPhotoIndex = 0;
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+
+  function openLightbox(index) {
+    currentPhotoIndex = index;
+    showPhoto();
+    lightbox.classList.add('open');
+    lightbox.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove('open');
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  function showPhoto() {
+    const photo = galleryPhotos[currentPhotoIndex];
+    lightboxImg.src = photo.src;
+    lightboxImg.alt = photo.alt;
+  }
+
+  function nextPhoto() {
+    currentPhotoIndex = (currentPhotoIndex + 1) % galleryPhotos.length;
+    showPhoto();
+  }
+
+  function prevPhoto() {
+    currentPhotoIndex = (currentPhotoIndex - 1 + galleryPhotos.length) % galleryPhotos.length;
+    showPhoto();
+  }
+
+  document.querySelectorAll('.photo-thumb').forEach(btn => {
+    btn.addEventListener('click', () => openLightbox(parseInt(btn.dataset.index, 10)));
+  });
+
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  document.getElementById('lightboxNext').addEventListener('click', nextPhoto);
+  document.getElementById('lightboxPrev').addEventListener('click', prevPhoto);
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowRight') nextPhoto();
+    if (e.key === 'ArrowLeft') prevPhoto();
+  });
+</script>
 </body>
 </html>
