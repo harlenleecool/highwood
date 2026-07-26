@@ -330,9 +330,13 @@
     }
   }
   .about-text-left p, .about-text-right p{margin:0; text-align:justify; hyphens:auto;}
-  .pull-quote{
+  .about-intro p.pull-quote{
+    display:table; margin:0 auto 16px;
     font-family:'Fraunces', serif; font-style:italic; font-size:1.2rem;
-    color:var(--ink-soft); padding-left:16px; border-left:2px solid var(--rule);
+    color:var(--ink-soft); text-align:center;
+    padding:0 18px;
+    border-left:2px solid var(--rule);
+    border-right:2px solid var(--rule);
   }
   .signoff{font-family:'Caveat', cursive; font-size:1.6rem; color:var(--ink-soft); margin-top:12px;}
 
