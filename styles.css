@@ -314,7 +314,7 @@
 
   /* ABOUT */
   .about-intro, .about-outro{max-width:720px; margin:0 auto 32px;}
-  .about-intro p, .about-outro p{margin:0 0 16px;}
+  .about-intro p, .about-outro p{margin:0 0 16px; text-align:justify; hyphens:auto;}
   .about-intro p:last-child, .about-outro p:last-child{margin-bottom:0;}
 
   .about-mid-grid{
@@ -329,7 +329,7 @@
       gap:32px;
     }
   }
-  .about-text-left p, .about-text-right p{margin:0;}
+  .about-text-left p, .about-text-right p{margin:0; text-align:justify; hyphens:auto;}
   .pull-quote{
     font-family:'Fraunces', serif; font-style:italic; font-size:1.2rem;
     color:var(--ink-soft); padding-left:16px; border-left:2px solid var(--rule);
